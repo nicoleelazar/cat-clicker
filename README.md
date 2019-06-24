@@ -1,3 +1,4 @@
 # cat-clicker
 
-This is an exercise in object oriented JavaScript that also includes drag and drop functionality.
+This was an exercise to write scalable JavaScript using a prototype design pattern. 
+You can click on any cat photo to increase its vote counter and you can also re-order the cats by draging and dropping them.
