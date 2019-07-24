@@ -1,37 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background: rgb(240, 255, 245);
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url('wall.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #info {
     text-align: center;
-    color: rgb(15, 49, 26);
+    color: rgb(255, 245, 245);
     margin: 25px auto;
     line-height: 1.7;
 }
 
 #info > p {
-    font-size: 19px;
-    color: rgb(15, 49, 26);
+    font-size: 18px;
+    color: rgb(255, 245, 245);
 
 }
 
 
 #container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 25px auto;
     padding: 15px;
     text-align: center;
     display: grid;
     grid-template-rows: auto;
     grid-column-gap: 25px;
-    grid-row-gap: 50px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /*use for responsive grid*/
+    grid-row-gap: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-self: center;
     align-self: center;
     justify-content: center;
@@ -40,11 +49,10 @@
 .cat-pic {
     position: relative;
     margin: 10px auto;
-    width: 300px;
-    height: 300px;
+    width: 270px;
+    height: 270px;
     object-fit: cover;
     object-position: bottom;
-    border: dotted rgb(15, 49, 26) 4px ;
     border-radius: 3px;
 
 }
@@ -53,28 +61,32 @@
     cursor: pointer;
 }
 
-.cat-pic:before {
-    font-family: "Font Awesome 5 Free";
-    font-size: 60px;
-    font-weight: 900;
-    content: "\f004";
-    color: rgb(216, 22, 64);
-    position: absolute;
-
-}
 
 .cat-name {
-    font-size: 28px;
-    color: rgb(15, 49, 26);
+    font-size: 25px;
+    color: salmon;
+    background-color: rgb(255, 245, 245);
+
 }
 
 .clicks {
-    font-size: 20px;
-    color: rgb(216, 22, 64);
+    font-size: 18px;
+    color: salmon;
+    background-color: rgb(255, 245, 245);
+
 }
 
 .smallHeart {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: rgb(216, 22, 64);
+    color: salmon;
+    background-color: rgb(255, 245, 245);
+}
+
+
+.catDiv {
+    border: 2px solid salmon;
+    border-radius: 3px;
+    background-color: rgb(255, 245, 245);
+
 }
