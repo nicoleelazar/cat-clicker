@@ -1,15 +1,14 @@
-
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Handlee', cursive;
 }
 
 body {
-    background-image: url('wall.jpg');
+    background-image: url('./assets/wall.jpg');
     height: 100vh;
     background-attachment: fixed;
     background-position: center;
@@ -24,8 +23,8 @@ body {
     line-height: 1.7;
 }
 
-#info > p {
-    font-size: 18px;
+#info>p {
+    font-size: 20px;
     color: rgb(255, 245, 245);
 
 }

@@ -3,66 +3,62 @@ const container = document.getElementById('container');
 let dragged;
 
 //CONSTRUCTOR
-function Cat (name, picture, count) {
+function Cat(name, picture, count) {
     this.name = name;
     this.picture = picture;
     this.count = count;
 
 
-    this.initialise = function() {
-    //make a frame to drag drop cat containers into
-    this.frame = document.createElement('div');
-    container.appendChild(this.frame);
+    this.initialise = function () {
+        //make a frame to drag drop cat containers into
+        this.frame = document.createElement('div');
+        container.appendChild(this.frame);
 
-    //make a container to store cat
-    this.catDiv = document.createElement('div');
-    this.catDiv.classList.add('catDiv');
-    this.frame.appendChild(this.catDiv);
+        //make a container to store cat
+        this.catDiv = document.createElement('div');
+        this.catDiv.classList.add('catDiv');
+        this.frame.appendChild(this.catDiv);
 
 
-    //DRAG OVER
-    this.catDiv.addEventListener('dragover', function(e) {
+        //DRAG OVER
+        this.catDiv.addEventListener('dragover', function (e) {
             e.preventDefault(this);
-    })
+        })
 
-    //DRAG START
-    this.catDiv.setAttribute('draggable', true);
+        //DRAG START
+        this.catDiv.setAttribute('draggable', true);
 
-    this.catDiv.addEventListener('dragstart', function(e) {
-        dragged = e.target;
-        e.dataTransfer.setData('text/plain',null);
-    })
+        this.catDiv.addEventListener('dragstart', function (e) {
+            dragged = e.target;
+            e.dataTransfer.setData('text/plain', null);
+        })
 
-    //DRAG SWAP AND DROP
-    this.catDiv.addEventListener('drop', function(e) {
-    
-        e.preventDefault();
+        //DRAG SWAP AND DROP
+        this.catDiv.addEventListener('drop', function (e) {
 
-        let from = dragged.parentNode;
-        let to ;
-        let target = e.target;
+            e.preventDefault();
 
-        //if not dropping on catDiv itself, ie. dropping on a 'img', then search another layer deep to its parent
-        if (e.target.className == "catDiv")
-        {
-            to = e.target.parentNode;
-        }
-        else if (e.target.parentNode.className == "catDiv")
-        {
-            to = e.target.parentNode.parentNode;
-            target = e.target.parentNode;
-        }
-        else {
-            console.log(e.target);
-        }
+            let from = dragged.parentNode;
+            let to;
+            let target = e.target;
 
-        // swapping
-        from.removeChild(dragged);
-        to.appendChild(dragged);
-    
-        to.removeChild(target);
-        from.appendChild(target);
-    })
+            //if not dropping on catDiv itself, ie. dropping on a 'img', then search another layer deep to its parent
+            if (e.target.className == "catDiv") {
+                to = e.target.parentNode;
+            } else if (e.target.parentNode.className == "catDiv") {
+                to = e.target.parentNode.parentNode;
+                target = e.target.parentNode;
+            } else {
+                console.log(e.target);
+            }
+
+            // swapping
+            from.removeChild(dragged);
+            to.appendChild(dragged);
+
+            to.removeChild(target);
+            from.appendChild(target);
+        })
 
 
         //make a div to display name of cat
@@ -91,8 +87,8 @@ function Cat (name, picture, count) {
 
 
         //Need closure with a reference to 'this' Cat object for the click event listener to be able to talk to count/ scoreboard/ the object in general
-        this.catPic.addEventListener('click', (function(newCat) {
-            return function() {
+        this.catPic.addEventListener('click', (function (newCat) {
+            return function () {
                 newCat.count++;
                 newCat.scoreBoard.innerHTML = `Total Votes: ${newCat.count}`;
             };
@@ -104,14 +100,9 @@ function Cat (name, picture, count) {
 //ALL CATS - stored in array for future use
 let cats = [];
 
-cats[0] = new Cat ('Oscar', 'cat.jpg', 0);
-cats[1] = new Cat ('Fluffy', 'cat1.jpg', 0);
-cats[2] = new Cat ('Lucky', 'cat2.jpg', 0);
-cats[3] = new Cat ('Mr. Squiggle', 'cat3.jpg', 0);
-cats[4] = new Cat ('Ginger', 'cat4.jpg', 0);
-cats[5] = new Cat ('Jerry', 'cat5.jpg', 0);
-
-
-
-
-    
+cats[0] = new Cat('Oscar', './assets/cat.jpg', 0);
+cats[1] = new Cat('Fluffy', './assets/cat1.jpg', 0);
+cats[2] = new Cat('Lucky', './assets/cat2.jpg', 0);
+cats[3] = new Cat('Mr. Squiggle', './assets/cat3.jpg', 0);
+cats[4] = new Cat('Ginger', './assets/cat4.jpg', 0);
+cats[5] = new Cat('Jerry', './assets/cat5.jpg', 0);
